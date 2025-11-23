@@ -23,8 +23,8 @@ export default function WhackMoleGame({ onGameEnd }: WhackMoleGameProps) {
   const [gameOver, setGameOver] = useState(false);
   const [combo, setCombo] = useState(0);
   
-  const gameLoopRef = useRef<NodeJS.Timeout>();
-  const timerRef = useRef<NodeJS.Timeout>();
+  const gameLoopRef = useRef<NodeJS.Timeout | undefined>(undefined);
+  const timerRef = useRef<NodeJS.Timeout | undefined>(undefined);
 
   const startGame = () => {
     setScore(0);

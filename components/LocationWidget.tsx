@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import dynamic from 'next/dynamic';
 import { FaMapMarkerAlt, FaClock } from 'react-icons/fa';
 import styles from '@/styles/LocationWidget.module.css';
+import 'leaflet/dist/leaflet.css';
 
 // Dynamically import map to avoid SSR issues
 const MapContainer = dynamic(
@@ -64,17 +65,17 @@ export default function LocationWidget({
 
   useEffect(() => {
     if (mounted && typeof window !== 'undefined') {
-      // Import leaflet CSS
-      import('leaflet/dist/leaflet.css');
-      
       // Fix for default marker icon
-      const L = require('leaflet');
-      delete L.Icon.Default.prototype._getIconUrl;
-      L.Icon.Default.mergeOptions({
-        iconRetinaUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png',
-        iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
-        shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
-      });
+      (async () => {
+        const L = (await import('leaflet')).default;
+        // @ts-expect-error - Leaflet marker icon workaround
+        delete L.Icon.Default.prototype._getIconUrl;
+        L.Icon.Default.mergeOptions({
+          iconRetinaUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png',
+          iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
+          shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
+        });
+      })();
     }
   }, [mounted]);
 

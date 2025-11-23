@@ -110,7 +110,7 @@ export default function Experience() {
           variants={fadeInUp}
         >
           <h2>Excited for More Amazing Experiences Ahead!</h2>
-          <p>This is just the beginning. Excited to create more innovative solutions and contribute to groundbreaking projects. Let's connect!</p>
+          <p>This is just the beginning. Excited to create more innovative solutions and contribute to groundbreaking projects. Let&apos;s connect!</p>
           <div className={styles.ctaButtons}>
             <a href="/contact" className="btn btn-primary">
               Let&apos;s Work Together

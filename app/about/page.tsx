@@ -63,7 +63,7 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2>Hello, I'm {personalInfo.name}</h2>
+            <h2>Hello, I&apos;m {personalInfo.name}</h2>
             <h3 className={styles.role}>{personalInfo.title}</h3>
             <p className={styles.bio}>{personalInfo.bio}</p>
 

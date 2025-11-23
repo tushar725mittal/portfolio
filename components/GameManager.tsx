@@ -39,8 +39,6 @@ export default function GameManager() {
   const maybeLaterCooldown = useRef<number>(0);
   const maybeLaterCooldownPeriod = 600000; // 10 minutes in milliseconds
 
-  const games: GameType[] = ['snake', 'memory', 'whack-mole', 'reaction', 'typing'];
-
   useEffect(() => {
     setMounted(true);
     gameStartTime.current = Date.now();
@@ -98,10 +96,11 @@ export default function GameManager() {
 
   // Trigger a random game
   const triggerRandomGame = useCallback(() => {
+    const games: GameType[] = ['snake', 'memory', 'whack-mole', 'reaction', 'typing'];
     const randomGame = games[Math.floor(Math.random() * games.length)];
     setShowGamePrompt(true);
     setCurrentGame(randomGame);
-  }, [games]);
+  }, []);
 
   // Track scroll behavior
   useEffect(() => {
@@ -244,7 +243,7 @@ export default function GameManager() {
                     fontSize: '0.9rem',
                   }}
                 >
-                  Let's Play! 🎯
+                  Let&apos;s Play! 🎯
                 </motion.button>
                 <motion.button
                   whileHover={{ scale: 1.05 }}

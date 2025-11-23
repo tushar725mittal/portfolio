@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaPaperPlane } from 'react-icons/fa';
+import { FaEnvelope, FaMapMarkerAlt, FaPaperPlane } from 'react-icons/fa';
 import { validateEmail } from '@/lib/utils';
 import { personalInfo, socialLinks } from '@/lib/data';
 import * as Icons from 'react-icons/fa';
@@ -80,7 +80,7 @@ export default function Contact() {
       } else {
         setSubmitStatus('error');
       }
-    } catch (error) {
+    } catch {
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -114,7 +114,7 @@ export default function Contact() {
             Get In <span className="gradient-text">Touch</span>
           </h1>
           <p className={styles.subtitle}>
-            I'd love to hear from you. Let's create something amazing together!
+            I&apos;d love to hear from you. Let&apos;s create something amazing together!
           </p>
         </motion.div>
 
@@ -125,10 +125,10 @@ export default function Contact() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h2>Let's talk about everything!</h2>
+            <h2>Let&apos;s talk about everything!</h2>
             <p>
-              Don't like forms? Send me an email directly or connect with me on
-              social media. I'm always open to discussing new projects,
+              Don&apos;t like forms? Send me an email directly or connect with me on
+              social media. I&apos;m always open to discussing new projects,
               creative ideas, or opportunities to be part of your vision.
             </p>
 

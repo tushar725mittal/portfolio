@@ -19,7 +19,7 @@ export default function Footer() {
       <div className={styles.container}>
         <div className={styles.content}>
           <div className={styles.section}>
-            <h3 className={styles.title}>Let's Connect</h3>
+            <h3 className={styles.title}>Let&apos;s Connect</h3>
             <p className={styles.description}>
               Feel free to reach out for collaborations or just a friendly hello
             </p>

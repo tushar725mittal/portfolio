@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -15,7 +15,6 @@ import {
   FaMapMarkerAlt,
   FaCalendarAlt,
   FaEnvelope,
-  FaPhone,
   FaLinkedin,
   FaGithub
 } from 'react-icons/fa';
@@ -24,7 +23,7 @@ import styles from '@/styles/Resume.module.css';
 
 type ViewMode = 'web' | 'pdf';
 
-export default function Resume() {
+function ResumeContent() {
   const searchParams = useSearchParams();
   const [viewMode, setViewMode] = useState<ViewMode>('web');
   const [pdfError, setPdfError] = useState(false);
@@ -192,7 +191,7 @@ export default function Resume() {
                   <FaBriefcase /> Work Experience
                 </motion.h3>
                 <div className={styles.timeline}>
-                  {experiences.map((exp, index) => (
+                  {experiences.map((exp) => (
                     <motion.div
                       key={exp.id}
                       className={styles.timelineItem}
@@ -430,6 +429,14 @@ export default function Resume() {
         </AnimatePresence>
       </div>
     </section>
+  );
+}
+
+export default function Resume() {
+  return (
+    <Suspense fallback={<div className="container" style={{ padding: '2rem', textAlign: 'center' }}>Loading...</div>}>
+      <ResumeContent />
+    </Suspense>
   );
 }
 

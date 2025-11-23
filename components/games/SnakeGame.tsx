@@ -24,7 +24,7 @@ export default function SnakeGame({ onGameEnd }: SnakeGameProps) {
   const [score, setScore] = useState(0);
   const [gameOver, setGameOver] = useState(false);
   
-  const gameLoopRef = useRef<NodeJS.Timeout>();
+  const gameLoopRef = useRef<NodeJS.Timeout | undefined>(undefined);
   const directionRef = useRef(direction);
 
   // Update direction ref when direction changes
@@ -115,13 +115,13 @@ export default function SnakeGame({ onGameEnd }: SnakeGameProps) {
     setIsPlaying(true);
   };
 
-  const endGame = () => {
+  const endGame = useCallback(() => {
     setIsPlaying(false);
     if (gameLoopRef.current) {
       clearInterval(gameLoopRef.current);
     }
     onGameEnd(score);
-  };
+  }, [onGameEnd, score]);
 
   // Game loop
   useEffect(() => {
@@ -145,7 +145,7 @@ export default function SnakeGame({ onGameEnd }: SnakeGameProps) {
     if (gameOver) {
       setTimeout(endGame, 1000);
     }
-  }, [gameOver, score]);
+  }, [gameOver, score, endGame]);
 
   // Keyboard listeners
   useEffect(() => {

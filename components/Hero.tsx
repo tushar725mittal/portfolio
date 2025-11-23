@@ -67,7 +67,7 @@ export default function Hero() {
         animate="visible"
       >
         <motion.div className={styles.greeting} variants={itemVariants}>
-          Hi, I'm
+          Hi, I&apos;m
         </motion.div>
 
         <motion.h1 className={styles.name} variants={itemVariants}>

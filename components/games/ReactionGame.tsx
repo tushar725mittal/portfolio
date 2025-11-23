@@ -20,7 +20,7 @@ export default function ReactionGame({ onGameEnd }: ReactionGameProps) {
   const [showAlert, setShowAlert] = useState(false);
   
   const startTimeRef = useRef<number>(0);
-  const timeoutRef = useRef<NodeJS.Timeout>();
+  const timeoutRef = useRef<NodeJS.Timeout | undefined>(undefined);
 
   const maxRounds = 5;
 
@@ -354,7 +354,7 @@ export default function ReactionGame({ onGameEnd }: ReactionGameProps) {
           <p>⚡ Test your reaction time over 5 rounds</p>
           <p>🔴 Wait for RED to turn GREEN</p>
           <p>🎯 Click as fast as you can when it turns GREEN!</p>
-          <p>⚠️ Don't click early or you'll restart!</p>
+          <p>⚠️ Don&apos;t click early or you&apos;ll restart!</p>
         </div>
       )}
 

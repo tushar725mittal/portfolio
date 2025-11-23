@@ -41,7 +41,7 @@ export default function Skills() {
           </p>
         </motion.div>
 
-        {categories.map((category, categoryIndex) => {
+        {categories.map((category) => {
           const categorySkills = skills.filter((skill) => skill.category === category);
           
           return (
@@ -117,8 +117,8 @@ export default function Skills() {
           viewport={{ once: true }}
           variants={fadeInUp}
         >
-          <h2>Let's Work Together</h2>
-          <p>I'm always interested in hearing about new projects and opportunities.</p>
+          <h2>Let&apos;s Work Together</h2>
+          <p>I&apos;m always interested in hearing about new projects and opportunities.</p>
           <a href="/contact" className="btn btn-primary">
             Get In Touch
           </a>

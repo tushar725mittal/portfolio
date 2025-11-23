@@ -40,7 +40,7 @@ export default function TypingGame({ onGameEnd }: TypingGameProps) {
   
   const inputRef = useRef<HTMLInputElement>(null);
   const startTimeRef = useRef<number>(0);
-  const timerRef = useRef<NodeJS.Timeout>();
+  const timerRef = useRef<NodeJS.Timeout | undefined>(undefined);
 
   const getRandomSentence = useCallback(() => {
     return sentences[Math.floor(Math.random() * sentences.length)];

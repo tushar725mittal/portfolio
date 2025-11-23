@@ -249,19 +249,26 @@ function ResumeContent() {
                         <div className={styles.itemHeader}>
                           <div>
                             <h4>{edu.degree}</h4>
-                            <p className={styles.company}>{edu.institution}</p>
+                            <p className={styles.company}>{edu.institution || edu.school}</p>
                             <p className={styles.field}>{edu.field}</p>
                           </div>
                           <div className={styles.dateLocation}>
                             <span className={styles.date}>
-                              <FaCalendarAlt /> {new Date(edu.startDate).getFullYear()} - {new Date(edu.endDate).getFullYear()}
+                              <FaCalendarAlt /> {edu.year || `${new Date(edu.startDate!).getFullYear()} - ${new Date(edu.endDate!).getFullYear()}`}
                             </span>
                             <span className={styles.location}>
                               <FaMapMarkerAlt /> {edu.location}
                             </span>
-                            {edu.gpa && <span className={styles.gpa}>GPA: {edu.gpa}</span>}
+                            {(edu.gpa || edu.percentage) && (
+                              <span className={styles.gpa}>
+                                {edu.gpa ? `GPA: ${edu.gpa}` : `Percentage: ${edu.percentage}`}
+                              </span>
+                            )}
                           </div>
                         </div>
+                        {edu.description && (
+                          <p className={styles.description}>{edu.description}</p>
+                        )}
                         {edu.achievements && (
                           <ul className={styles.responsibilities}>
                             {edu.achievements.map((achievement, i) => (

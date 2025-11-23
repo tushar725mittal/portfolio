@@ -76,12 +76,12 @@ export const experiences: Experience[] = [
     company: 'Contentstack',
     position: 'Associate Software Developer Intern',
     startDate: '2024-01',
-    endDate: '2024-06',
+    endDate: '2024-07',
     location: 'Mumbai, India',
     description: [
-      'Passionate about startup culture and leading from the front—spearheaded a 9-member team to deliver a modular event website using Next.js and Headless CMS.',
-      'Working on in-production projects with a team of Developers and QAs following a proper Software Development Lifecycle. Creating POCs for various customers demonstrating the capabilities of the product. Development of 3 in-house tools.',
-      'Contributed to the development and independently owned the integration of 4 flagship features—Visual Builder, Timeline Preview, Lytics CDP, and Personalize—by identifying key use cases and seamlessly implementing them across React, Next.js, and Vue.js.',
+      'Passionate about startup culture and leading from the front, spearheaded a 9-member team to deliver a modular event website using Next.js and Headless CMS.',
+      'Working on in production projects with a team of Developers and QAs following a proper Software Development Lifecycle. Creating POCs for various customers demonstrating the capabilities of the product. Development of 3 in-house tools.',
+      'Contributed to the development and independently owned the integration of 4 flagship features — Visual Builder, Timeline Preview, Lytics CDP, and Personalize by identifying key use cases and seamlessly implementing them across React, Next.js, and Vue.js.',
       'Actively contributed to Compass, Contentstack’s flagship demo platform and customer entry point, which serves as the 1st launchpad for all new features, setting the standard for platform best practices.',
       'Led a team of 3 to develop the official BayFC fan club website, ensuring brand alignment and high performance across devices',
     ],
@@ -111,10 +111,10 @@ export const skills: Skill[] = [
   // Tools
   { id: '16', name: 'Git', icon: 'SiGit', category: 'Tools', level: 90 },
   { id: '17', name: 'Docker', icon: 'SiDocker', category: 'Tools', level: 75 },
-  { id: '18', name: 'AWS', icon: 'SiAmazonaws', category: 'Tools', level: 70 },
+  { id: '18', name: 'AWS', icon: 'SiAws', category: 'Tools', level: 70 },
   { id: '19', name: 'Vercel', icon: 'SiVercel', category: 'Tools', level: 85 },
   { id: '20', name: 'Figma', icon: 'SiFigma', category: 'Tools', level: 80 },
-  { id: '21', name: 'VS Code', icon: 'SiVisualstudiocode', category: 'Tools', level: 95 },
+  { id: '21', name: 'VS Code', icon: 'SiVscode', category: 'Tools', level: 95 },
 ];
 
 export const blogPosts: BlogPost[] = [
@@ -177,7 +177,7 @@ export const socialLinks: SocialLink[] = [
 export const personalInfo = {
   name: 'Tushar Mittal',
   title: 'Full Stack Developer',
-  bio: 'Passionate full-stack developer with expertise in building modern web applications. Specialized in React, Next.js, Node.js, and Contentstack. Love creating elegant solutions to complex problems and delivering high-quality user experiences. With a strong foundation in both frontend and backend technologies, I focus on building scalable, performant, and user-friendly applications.',
+  bio: 'Passionate fullstack developer with expertise in building modern web applications. Specialized in React, Next.js, Node.js, and Contentstack. Love creating elegant solutions to complex problems and delivering high quality user experiences. With a strong foundation in both frontend and backend technologies, I focus on building scalable, performant, and user-friendly applications.',
   email: 'tushar725mittal@gmail.com',
   location: 'India',
   city: 'Mumbai - 401303',
@@ -198,6 +198,24 @@ export const education: Education[] = [
     gpa: '9.7/10',
     description: 'Focused on software engineering, web development, and data structures & algorithms.',
   },
+  {
+    id: '2',
+    degree: '12th',
+    field: 'CSBE',
+    school: 'Apex Internation School, Jaipur',
+    location: 'Jaipur, India',
+    year: '2019',
+    percentage: '89.90%',
+  },
+  {
+    id: '3',
+    degree: '10th',
+    field: 'CBSE',
+    school: 'St. Xavier\'s School, Jaipur',
+    location: 'Jaipur, India',
+    year: '2017',
+    gpa: '10/10',
+  }
 ];
 
 export const certifications: Certification[] = [

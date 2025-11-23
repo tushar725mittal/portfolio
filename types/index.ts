@@ -58,11 +58,14 @@ export interface Education {
   id: string;
   degree: string;
   field: string;
-  institution: string;
+  institution?: string;  // For college/university
+  school?: string;       // For school education
   location: string;
-  startDate: string;
-  endDate: string;
+  startDate?: string;    // For date range format
+  endDate?: string;      // For date range format
+  year?: string;         // For single year format
   gpa?: string;
+  percentage?: string;   // Alternative to GPA
   achievements?: string[];
   description?: string;
 }

@@ -102,9 +102,8 @@ export default function About() {
           }}
         >
           {[
-            { number: '5+', label: 'Years Experience' },
-            { number: '50+', label: 'Projects Completed' },
-            { number: '30+', label: 'Happy Clients' },
+            { number: '2', label: 'Years Experience' },
+            { number: '10+', label: 'Projects Completed' },
             { number: '100%', label: 'Satisfaction Rate' },
           ].map((item, index) => (
             <motion.div

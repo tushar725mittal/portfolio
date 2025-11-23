@@ -1,0 +1,146 @@
+.githubHeatmap {
+  background: var(--card-bg, rgba(255, 255, 255, 0.05));
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  margin: 2rem 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.githubHeatmap:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.icon {
+  font-size: 1.75rem;
+  color: var(--primary-color, #667eea);
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+  background: linear-gradient(135deg, var(--primary-color, #667eea) 0%, var(--secondary-color, #764ba2) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.calendarContainer {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 1rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.calendarContainer::-webkit-scrollbar {
+  height: 6px;
+}
+
+.calendarContainer::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 3px;
+}
+
+.calendarContainer::-webkit-scrollbar-thumb {
+  background: var(--primary-color, #667eea);
+  border-radius: 3px;
+}
+
+.calendarContainer::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-color, #764ba2);
+}
+
+.footer {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary-color, #667eea);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  background: rgba(102, 126, 234, 0.1);
+}
+
+.link:hover {
+  background: rgba(102, 126, 234, 0.2);
+  transform: translateX(4px);
+}
+
+/* Dark mode support */
+[data-theme='dark'] .githubHeatmap {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme='light'] .githubHeatmap {
+  background: rgba(0, 0, 0, 0.03);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='light'] .footer {
+  border-top-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .githubHeatmap {
+    padding: 1.5rem;
+  }
+
+  .title {
+    font-size: 1.25rem;
+  }
+
+  .icon {
+    font-size: 1.5rem;
+  }
+
+  .calendarContainer {
+    padding: 0.75rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .githubHeatmap {
+    padding: 1rem;
+  }
+
+  .header {
+    gap: 0.5rem;
+  }
+
+  .title {
+    font-size: 1.1rem;
+  }
+
+  .icon {
+    font-size: 1.25rem;
+  }
+
+  .link {
+    font-size: 0.875rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+

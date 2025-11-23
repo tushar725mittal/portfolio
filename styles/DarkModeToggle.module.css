@@ -1,0 +1,25 @@
+.toggle {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-primary);
+  font-size: 1.125rem;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.toggle:hover {
+  border-color: var(--border-hover);
+  background: var(--background-secondary);
+}
+
+.toggle:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--border-color);
+}
+
